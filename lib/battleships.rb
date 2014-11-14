@@ -16,12 +16,16 @@ class BattleShips < Sinatra::Base
 
   #post '/' do 
 
-  get '/new_game' do 
+  get '/new_game' do
+  	puts session.inspect 
   	erb :player_reg
   end
 
-  get '/welcome' do 
-  	@player = params[:name]
+  post '/welcome' do 
+  	@player = Player.new(params[:name])
+  	@name = @player.name 
+  	session[:player_1] = @player
+  	puts session 
   	erb :welcome
   end
 

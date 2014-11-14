@@ -9,3 +9,7 @@ Feature: Starting the game
 		Then I should see "What is your name?"
 		When I input my name and click "submit"
 		Then I should see a page that welcomes me to Battleships
+
+
+	Scenario: Registering the second player
+	
